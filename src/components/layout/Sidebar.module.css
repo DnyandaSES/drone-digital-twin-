@@ -1,0 +1,258 @@
+/* AEROTWIN SIDEBAR — TAB PATTERN (FLUSH INSIDE SIDEBAR) */
+
+
+/* SIDEBAR CONTAINER */
+
+.sidebar {
+  position: relative;
+  z-index: var(--z-sidebar);
+
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: var(--space-4) 8px;
+
+  background: var(--bg-panel);
+  border-right: 1px solid var(--line-rivet);
+
+  flex-shrink: 0;
+  box-sizing: border-box;
+
+  transition:
+    background var(--transition-theme),
+    border-color var(--transition-theme);
+  overflow: hidden;
+}
+
+
+/* TOP BRAND HEADER */
+
+.headerRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 4px;
+  margin-bottom: 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.mark {
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--accent-amber);
+  color: var(--bg-hangar);
+
+  border-radius: var(--panel-radius);
+
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.brandText {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--text-canopy);
+  white-space: nowrap;
+  user-select: none;
+}
+
+
+/* NAVIGATION CONTAINER */
+
+.navigation {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  gap: 6px;
+  flex: 1;
+}
+
+
+/* NAVIGATION ITEM — TAB PATTERN (STRICTLY CONTAINED) */
+
+.navItem {
+  position: relative;
+
+  width: 100%;
+  height: var(--nav-item-size, 42px);
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 10px;
+
+  color: var(--text-instrument);
+
+  border-left: 3.5px solid transparent;
+  border-radius: 0;
+  background: transparent;
+
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast),
+    border-color var(--transition-fast);
+
+  cursor: pointer;
+  text-decoration: none;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+
+/* ICON */
+
+.navItem svg {
+  flex-shrink: 0;
+  min-width: 20px;
+  transition: color var(--transition-fast);
+}
+
+
+/* HOVER INACTIVE TAB */
+
+.navItem:hover {
+  background: var(--bg-panel-raised);
+  color: var(--text-canopy);
+}
+
+
+/* ACTIVE TAB — STRICTLY CONTAINED INSIDE SIDEBAR */
+
+.navItem.active {
+  width: 100%;
+  margin-right: 0;
+
+  background: var(--bg-panel-raised);
+  color: var(--text-canopy);
+  font-weight: 600;
+
+  border-left-color: var(--accent-amber);
+}
+
+.navItem.active svg {
+  color: var(--accent-amber);
+  stroke-width: 1.8;
+}
+
+
+/* INLINE LABEL & TOOLTIP */
+
+.label {
+  margin-left: 12px;
+  font-family: var(--font-ui);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  white-space: nowrap;
+  color: inherit;
+}
+
+
+/* Tooltip behavior only when collapsed */
+.sidebar:not(.expanded) .labelTooltip {
+  position: absolute;
+  left: calc(100% + var(--space-3));
+  z-index: var(--z-dropdown);
+  margin-left: 0;
+
+  padding: 6px 10px;
+
+  background: var(--bg-panel-raised);
+  border: 1px solid var(--line-rivet);
+  border-radius: var(--button-radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+  color: var(--text-canopy);
+  font-family: var(--font-ui);
+  font-size: var(--text-sm);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transform: translateX(-6px);
+
+  transition:
+    opacity var(--transition-fast),
+    transform var(--transition-fast),
+    visibility var(--transition-fast);
+}
+
+.sidebar:not(.expanded) .navItem:hover .labelTooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+
+/* TOGGLE BUTTON AT BOTTOM */
+
+.toggleBtn {
+  all: unset;
+  cursor: pointer;
+
+  width: 100%;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 10px;
+
+  margin-top: auto;
+  border-radius: var(--panel-radius);
+
+  color: var(--text-instrument);
+  background: transparent;
+  border: 1px solid transparent;
+
+  transition: all var(--transition-fast);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.toggleBtn svg {
+  flex-shrink: 0;
+  min-width: 20px;
+}
+
+.toggleBtn:hover {
+  background: var(--bg-panel-raised);
+  color: var(--text-canopy);
+  border-color: var(--line-rivet);
+}
+
+.toggleLabel {
+  margin-left: 12px;
+  font-family: var(--font-ui);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+
+/* KEYBOARD FOCUS */
+
+.navItem:focus-visible,
+.toggleBtn:focus-visible {
+  outline: var(--focus-width) solid var(--focus-color);
+  outline-offset: var(--focus-offset);
+}

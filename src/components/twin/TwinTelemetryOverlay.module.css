@@ -1,0 +1,118 @@
+/* TwinTelemetryOverlay.module.css */
+
+/* ── Shared readout style ──────────────────────────────── */
+
+.readout {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+  padding: 3px 0;
+}
+
+.label {
+  font: 500 10px/1 var(--font-display);
+  color: var(--text-instrument);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.value {
+  font: 400 13px/1 var(--font-data);
+  color: var(--text-canopy);
+  letter-spacing: 0.02em;
+}
+
+
+/* ── Left dock (orientation) ───────────────────────────── */
+
+.left {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px 14px;
+  background: color-mix(in srgb, var(--bg-panel) 88%, transparent);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--line-rivet);
+  border-radius: var(--panel-radius);
+  min-width: 100px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+
+/* ── Right dock (flight data) ──────────────────────────── */
+
+.right {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px 14px;
+  background: color-mix(in srgb, var(--bg-panel) 88%, transparent);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--line-rivet);
+  border-radius: var(--panel-radius);
+  min-width: 135px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+
+/* ── Status badge ──────────────────────────────────────── */
+
+.statusBadge {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  font: 600 11px/1 var(--font-display);
+  letter-spacing: 0.1em;
+  border-radius: 100px;
+  backdrop-filter: blur(8px);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.live {
+  background: rgba(62, 207, 142, 0.15);
+  color: var(--status-nominal);
+  border: 1px solid rgba(62, 207, 142, 0.3);
+}
+
+.offline {
+  background: rgba(255, 90, 95, 0.15);
+  color: var(--status-critical);
+  border: 1px solid rgba(255, 90, 95, 0.3);
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.live .dot {
+  background: var(--status-nominal);
+  box-shadow: 0 0 6px var(--status-nominal);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.offline .dot {
+  background: var(--status-critical);
+  box-shadow: 0 0 6px var(--status-critical);
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.4; }
+}

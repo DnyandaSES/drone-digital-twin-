@@ -1,0 +1,72 @@
+/* AEROTWIN — LIVE INDICATOR */
+
+
+.wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+
+.dot {
+  display: inline-block;
+  flex-shrink: 0;
+
+  width: var(--live-dot-size);
+  height: var(--live-dot-size);
+
+  border-radius: 50%;
+}
+
+
+.text {
+  font-family: var(--font-data);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+
+  color: var(--text-instrument);
+  line-height: 1;
+}
+
+
+/* ── Live (cyan, breathing) ────────────────────────────── */
+
+.live {
+  background: var(--accent-cyan);
+  animation: breathe var(--live-pulse-duration) ease-in-out infinite;
+}
+
+
+/* ── Idle (gray, static) ───────────────────────────────── */
+
+.idle {
+  background: var(--text-instrument);
+  animation: none;
+}
+
+
+/* ── Lost (red, static) ────────────────────────────────── */
+
+.lost {
+  background: var(--status-critical);
+  animation: none;
+}
+
+
+/* ── Breathing keyframe ────────────────────────────────── */
+
+@keyframes breathe {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.3; }
+}
+
+
+/* ── Reduced motion ────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .dot {
+    animation: none;
+  }
+}

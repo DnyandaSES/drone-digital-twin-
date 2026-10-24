@@ -1,0 +1,64 @@
+/* AEROTWIN — STATUS CHIP */
+
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  padding: 4px 8px;
+
+  border: 1px solid var(--line-rivet);
+  border-radius: 20px;
+
+  font-family: var(--font-data);
+  font-size: 10.5px;
+  letter-spacing: 0.04em;
+
+  color: var(--text-instrument);
+
+  white-space: nowrap;
+
+  transition:
+    color var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+
+.icon {
+  font-size: 9px;
+  line-height: 1;
+}
+
+
+/* ── Nominal ───────────────────────────────────────────── */
+
+.nominal {
+  color: var(--status-nominal);
+  border-color: color-mix(in srgb, var(--status-nominal) 40%, var(--line-rivet));
+}
+
+
+/* ── Caution ───────────────────────────────────────────── */
+
+.caution {
+  color: var(--status-caution);
+  border-color: color-mix(in srgb, var(--status-caution) 40%, var(--line-rivet));
+}
+
+
+/* ── Critical ──────────────────────────────────────────── */
+
+.critical {
+  color: var(--status-critical);
+  border-color: color-mix(in srgb, var(--status-critical) 40%, var(--line-rivet));
+}
+
+
+/* ── Reduced motion ────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .chip {
+    transition: none;
+  }
+}

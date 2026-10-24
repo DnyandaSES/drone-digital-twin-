@@ -1,0 +1,266 @@
+/* Settings.module.css — AeroTwin System Settings */
+
+.container {
+  padding: var(--page-padding);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--line-rivet);
+}
+
+.titleGroup {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.subtitle {
+  font: var(--type-caption);
+  color: var(--text-instrument);
+}
+
+.headerActions {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.section {
+  background: var(--bg-panel);
+  border: 1px solid var(--line-rivet);
+  border-radius: var(--panel-radius);
+  padding: var(--panel-padding);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  transition: border-color var(--transition-fast);
+}
+
+.sectionTitle {
+  font: var(--type-panel-label);
+  color: var(--text-instrument);
+  letter-spacing: 0.08em;
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--line-rivet);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.labelGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-width: 450px;
+}
+
+.labelName {
+  font: 500 13px/1.4 var(--font-ui);
+  color: var(--text-canopy);
+}
+
+.labelDesc {
+  font: var(--type-caption);
+  color: var(--text-instrument);
+}
+
+.controlGroup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Inputs & Numbers */
+.input {
+  background: var(--bg-panel-raised);
+  border: 1px solid var(--line-rivet);
+  border-radius: var(--button-radius);
+  color: var(--text-canopy);
+  padding: 8px 12px;
+  font: 400 13px/1 var(--font-data);
+  outline: none;
+  width: 140px;
+  transition: border-color var(--transition-fast);
+}
+
+.input:focus {
+  border-color: var(--accent-cyan);
+}
+
+/* Custom Range Slider */
+.rangeWrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 220px;
+}
+
+.rangeInput {
+  accent-color: var(--accent-cyan);
+  cursor: pointer;
+  flex: 1;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--bg-panel-raised);
+}
+
+.rangeValue {
+  font: var(--type-stat-unit);
+  color: var(--accent-cyan);
+  min-width: 48px;
+  text-align: right;
+}
+
+/* Custom Toggle Switch */
+.switchLabel {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.switchInput {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switchTrack {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--bg-panel-raised);
+  border: 1px solid var(--line-rivet);
+  transition: 0.3s;
+  border-radius: 24px;
+}
+
+.switchTrack:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  bottom: 3px;
+  background-color: var(--text-instrument);
+  transition: 0.3s;
+  border-radius: 50%;
+}
+
+.switchInput:checked + .switchTrack {
+  background-color: rgba(79, 216, 224, 0.2);
+  border-color: var(--accent-cyan);
+}
+
+.switchInput:checked + .switchTrack:before {
+  transform: translateX(20px);
+  background-color: var(--accent-cyan);
+}
+
+/* Segmented Buttons */
+.segmentGroup {
+  display: flex;
+  background: var(--bg-panel-raised);
+  border: 1px solid var(--line-rivet);
+  border-radius: var(--button-radius);
+  padding: 3px;
+  gap: 3px;
+}
+
+.segmentBtn {
+  all: unset;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font: 500 12px/1 var(--font-display);
+  color: var(--text-instrument);
+  transition: all var(--transition-fast);
+}
+
+.segmentBtnActive {
+  color: var(--bg-hangar);
+  background: var(--accent-cyan);
+}
+
+/* Base Buttons */
+.btn {
+  all: unset;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: var(--button-radius);
+  font: 500 12px/1 var(--font-display);
+  color: var(--text-canopy);
+  background: var(--bg-panel-raised);
+  border: 1px solid var(--line-rivet);
+  transition: all var(--transition-fast);
+}
+
+.btn:hover {
+  border-color: var(--accent-cyan);
+  color: var(--accent-cyan);
+}
+
+.btnDanger {
+  all: unset;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: var(--button-radius);
+  font: 500 12px/1 var(--font-display);
+  color: var(--status-critical);
+  background: rgba(255, 90, 95, 0.15);
+  border: 1px solid rgba(255, 90, 95, 0.3);
+  transition: all var(--transition-fast);
+}
+
+.btnDanger:hover {
+  background: var(--status-critical);
+  color: #fff;
+}
+
+.btnPrimary {
+  all: unset;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  border-radius: var(--button-radius);
+  font: 600 12px/1 var(--font-display);
+  color: var(--bg-hangar);
+  background: var(--accent-cyan);
+  transition: all var(--transition-fast);
+}
+
+.btnPrimary:hover {
+  opacity: 0.9;
+  box-shadow: 0 0 12px rgba(79, 216, 224, 0.4);
+}

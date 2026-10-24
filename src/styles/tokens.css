@@ -1,0 +1,336 @@
+/* 
+   AEROTWIN — DESIGN TOKENS
+   Standard (Dark Mode) + Field Mode (Light Mode)
+*/
+
+/* STANDARD THEME (DEFAULT / DARK MODE) */
+
+:root {
+  /* ---------- Surfaces ---------- */
+
+  --bg-hangar: #0A0D10;
+  --bg-panel: #12161B;
+  --bg-panel-raised: #171C22;
+
+  /* ---------- Borders / Dividers ---------- */
+
+  --line-rivet: #232A31;
+
+  /* ---------- Typography ---------- */
+
+  --text-canopy: #E8EDF0;
+  --text-instrument: #7C8A96;
+
+  /* ---------- Accents ---------- */
+
+  --accent-amber: #F5A623;
+  --accent-cyan: #4FD8E0;
+
+  /* ---------- Status ---------- */
+
+  --status-nominal: #3ECF8E;
+  --status-caution: #F5A623;
+  --status-critical: #FF5A5F;
+}
+
+
+/* SYSTEM DAY MODE / LIGHT MODE -> FIELD MODE */
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-hangar: #F3F2EE;
+    --bg-panel: #FFFFFF;
+    --bg-panel-raised: #EAE8E1;
+
+    --line-rivet: #D7D5CE;
+
+    --text-canopy: #14181C;
+    --text-instrument: #6B6558;
+
+    --accent-amber: #B5730A;
+    --accent-cyan: #0F8E96;
+
+    --status-nominal: #1E9A63;
+    --status-caution: #B5730A;
+    --status-critical: #C93A3F;
+  }
+}
+
+
+/* SYSTEM DARK MODE -> STANDARD MODE */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-hangar: #0A0D10;
+    --bg-panel: #12161B;
+    --bg-panel-raised: #171C22;
+
+    --line-rivet: #232A31;
+
+    --text-canopy: #E8EDF0;
+    --text-instrument: #7C8A96;
+
+    --accent-amber: #F5A623;
+    --accent-cyan: #4FD8E0;
+
+    --status-nominal: #3ECF8E;
+    --status-caution: #F5A623;
+    --status-critical: #FF5A5F;
+  }
+}
+
+
+/* EXPLICIT THEME OVERRIDES */
+
+:root[data-theme="standard"] {
+  --bg-hangar: #0A0D10;
+  --bg-panel: #12161B;
+  --bg-panel-raised: #171C22;
+
+  --line-rivet: #232A31;
+
+  --text-canopy: #E8EDF0;
+  --text-instrument: #7C8A96;
+
+  --accent-amber: #F5A623;
+  --accent-cyan: #4FD8E0;
+
+  --status-nominal: #3ECF8E;
+  --status-caution: #F5A623;
+  --status-critical: #FF5A5F;
+}
+
+:root[data-theme="field"] {
+  --bg-hangar: #F3F2EE;
+  --bg-panel: #FFFFFF;
+  --bg-panel-raised: #EAE8E1;
+
+  --line-rivet: #D7D5CE;
+
+  --text-canopy: #14181C;
+  --text-instrument: #6B6558;
+
+  --accent-amber: #B5730A;
+  --accent-cyan: #0F8E96;
+
+  --status-nominal: #1E9A63;
+  --status-caution: #B5730A;
+  --status-critical: #C93A3F;
+}
+
+
+/* TYPOGRAPHY */
+
+:root {
+  /* Font families */
+
+  --font-display:
+    "Space Grotesk",
+    system-ui,
+    sans-serif;
+
+  --font-ui:
+    "IBM Plex Sans",
+    system-ui,
+    sans-serif;
+
+  --font-data:
+    "IBM Plex Mono",
+    "SF Mono",
+    monospace;
+
+
+  /* Type scale */
+
+  --type-page-title:
+    600 20px/1.2 var(--font-display);
+
+  --type-panel-label:
+    600 13px/1.4 var(--font-display);
+
+  --type-stat-large:
+    500 32px/1 var(--font-data);
+
+  --type-stat-unit:
+    400 13px/1 var(--font-ui);
+
+  --type-body:
+    400 14px/1.5 var(--font-ui);
+
+  --type-caption:
+    400 12px/1.4 var(--font-ui);
+
+
+  /* Additional useful UI sizes */
+
+  --text-xs: 10px;
+  --text-sm: 12px;
+  --text-md: 14px;
+  --text-lg: 16px;
+  --text-xl: 20px;
+}
+
+
+/* 
+   SPACING
+   8px BASE UNIT
+ */
+
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+}
+
+
+/* LAYOUT */
+
+:root {
+  --sidebar-width: 64px;
+  --sidebar-width-expanded: 200px;
+
+  --topbar-height: 48px;
+
+  --page-padding: 20px;
+  --panel-padding: 16px;
+  --twin-padding: 24px;
+
+  --grid-gutter: 16px;
+
+  --base-unit: 8px;
+}
+
+
+/* COMPONENT SIZING */
+
+:root {
+  /* Panels */
+
+  --panel-radius: 6px;
+  --button-radius: 4px;
+
+  --panel-border-width: 1px;
+
+  /* Corner brackets */
+
+  --corner-bracket-size: 14px;
+  --corner-bracket-width: 2px;
+
+  /* Live indicator */
+
+  --live-dot-size: 6px;
+
+  /* Navigation */
+
+  --nav-item-size: 44px;
+  --nav-icon-size: 20px;
+
+  /* Dashboard */
+
+  --stat-value-size: 32px;
+}
+
+
+/* MOTION */
+
+:root {
+  --transition-theme:
+    background 250ms ease,
+    color 250ms ease,
+    border-color 250ms ease;
+
+  --transition-fast:
+    150ms ease;
+
+  --transition-state:
+    400ms ease;
+
+  --transition-chart:
+    300ms ease;
+
+  --transition-page:
+    150ms ease;
+
+  --live-pulse-duration:
+    2s;
+
+  --critical-flash-duration:
+    600ms;
+}
+
+
+/* OPACITY */
+
+:root {
+  --opacity-grid: 0.35;
+  --opacity-muted: 0.65;
+  --opacity-disabled: 0.45;
+  --opacity-overlay: 0.88;
+}
+
+
+/* Z-INDEX */
+
+:root {
+  --z-base: 0;
+  --z-panel: 10;
+  --z-sidebar: 20;
+  --z-topbar: 30;
+  --z-dropdown: 40;
+  --z-modal: 100;
+}
+
+
+/* ACCESSIBILITY / FOCUS */
+
+:root {
+  --focus-width: 2px;
+  --focus-color: var(--accent-amber);
+  --focus-offset: 2px;
+}
+
+
+/* DATA VISUALIZATION */
+
+:root {
+  --chart-line-width: 1.5px;
+  --chart-grid-width: 1px;
+
+  --chart-grid-opacity: 0.45;
+
+  /*
+   * Cyan means LIVE telemetry.
+   * Historical/replay data should use a neutral gray.
+   */
+
+  --chart-live: var(--accent-cyan);
+  --chart-history: #7C8A96;
+
+  /* Power-source visualization */
+
+  --chart-battery: var(--accent-cyan);
+  --chart-fuel-cell: var(--status-nominal);
+  --chart-dc-bus: var(--accent-amber);
+}
+
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-theme: none;
+    --transition-fast: none;
+    --transition-state: none;
+    --transition-chart: none;
+    --transition-page: none;
+    --live-pulse-duration: 0ms;
+    --critical-flash-duration: 0ms;
+  }
+}

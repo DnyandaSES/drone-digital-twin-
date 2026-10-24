@@ -1,0 +1,74 @@
+/* AEROTWIN — ALERTS SUMMARY */
+
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+
+/* ── Alert row ─────────────────────────────────────────── */
+
+.alertRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+
+  font-family: var(--font-ui);
+  font-size: 12px;
+
+  color: var(--text-instrument);
+
+  padding: var(--space-1) 0;
+}
+
+
+/* ── Icon ──────────────────────────────────────────────── */
+
+.icon {
+  flex-shrink: 0;
+
+  width: 16px;
+
+  font-size: 11px;
+
+  text-align: center;
+}
+
+
+/* ── Message ───────────────────────────────────────────── */
+
+.message {
+  flex: 1;
+}
+
+
+/* ── Detail ────────────────────────────────────────────── */
+
+.detail {
+  margin-left: auto;
+
+  font-family: var(--font-data);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+
+  color: var(--text-canopy);
+}
+
+
+/* ── Severity colors ───────────────────────────────────── */
+
+.nominal .icon {
+  color: var(--status-nominal);
+}
+
+.caution .icon,
+.caution .message {
+  color: var(--status-caution);
+}
+
+.critical .icon,
+.critical .message {
+  color: var(--status-critical);
+}

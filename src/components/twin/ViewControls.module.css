@@ -1,0 +1,115 @@
+/* ViewControls.module.css */
+
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 6px;
+  background: color-mix(in srgb, var(--bg-panel) 92%, transparent);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--line-rivet);
+  border-radius: 8px;
+  flex-wrap: wrap;
+}
+
+.group {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.icon {
+  color: var(--text-instrument);
+  opacity: 0.6;
+  margin-right: 4px;
+  flex-shrink: 0;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 4px 7px;
+  font: 600 9px/1 var(--font-ui);
+  letter-spacing: 0.08em;
+  color: var(--text-instrument);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  background: color-mix(in srgb, var(--accent-cyan) 15%, transparent);
+  border-color: var(--line-rivet);
+  color: var(--accent-cyan);
+}
+
+.btn.active {
+  background: color-mix(in srgb, var(--accent-cyan) 20%, transparent);
+  border-color: var(--accent-cyan);
+  color: var(--accent-cyan);
+  box-shadow: 0 0 6px color-mix(in srgb, var(--accent-cyan) 30%, transparent);
+}
+
+.btnLabel {
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.reset {
+  margin-left: 2px;
+}
+
+.divider {
+  width: 1px;
+  height: 18px;
+  background: var(--line-rivet);
+  margin: 0 4px;
+  opacity: 0.5;
+}
+
+/* ── Sliders ───────────────────────────────────────────── */
+
+.sliderGroup {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 6px;
+  margin-left: 4px;
+  border-left: 1px solid var(--line-rivet);
+}
+
+.sliderLabel {
+  font: 600 8px/1 var(--font-ui);
+  letter-spacing: 0.1em;
+  color: var(--text-instrument);
+  opacity: 0.7;
+  white-space: nowrap;
+}
+
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 60px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--line-rivet);
+  outline: none;
+  cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent-cyan);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 4px color-mix(in srgb, var(--accent-cyan) 50%, transparent);
+  cursor: pointer;
+}

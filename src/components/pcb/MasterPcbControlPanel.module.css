@@ -1,0 +1,472 @@
+/* ────────────────────────────────────────────────────────
+   AEROTWIN — MASTER PCB & THROTTLE CONTROL PANEL STYLES
+   Fully theme-responsive (Light / Field Mode & Dark / Standard Mode)
+   ──────────────────────────────────────────────────────── */
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  background: var(--bg-panel);
+  border: 1px solid var(--line-rivet);
+  border-radius: var(--panel-radius, 8px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  position: relative;
+  overflow: hidden;
+  transition:
+    background var(--transition-fast, 0.2s),
+    border-color var(--transition-fast, 0.2s);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line-rivet);
+  padding-bottom: 12px;
+}
+
+.titleArea {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.iconWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--accent-cyan) 12%, transparent);
+  color: var(--accent-cyan);
+  border: 1px solid color-mix(in srgb, var(--accent-cyan) 30%, transparent);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-canopy);
+}
+
+.subtitle {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  color: var(--text-instrument);
+  letter-spacing: 0.04em;
+}
+
+.badgeGroup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.statusPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.pillConnected {
+  background: color-mix(in srgb, var(--status-nominal) 15%, transparent);
+  color: var(--status-nominal);
+  border: 1px solid color-mix(in srgb, var(--status-nominal) 35%, transparent);
+}
+
+.pillDisconnected {
+  background: color-mix(in srgb, var(--status-critical) 15%, transparent);
+  color: var(--status-critical);
+  border: 1px solid color-mix(in srgb, var(--status-critical) 35%, transparent);
+}
+
+.pulseDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 6px currentColor;
+  animation: pulse 1.8s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+/* ── Throttle Section ── */
+.throttleSection {
+  background: var(--bg-panel-raised);
+  border: 1px solid var(--line-rivet);
+  border-radius: 6px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sectionLabel {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-instrument);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.throttleDisplay {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.throttleNumber {
+  font-family: var(--font-data);
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--accent-cyan);
+}
+
+.throttleUnit {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-instrument);
+}
+
+/* Range input styling */
+.sliderWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background: var(--line-rivet);
+  outline: none;
+  cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--accent-cyan);
+  cursor: pointer;
+  box-shadow: 0 0 10px color-mix(in srgb, var(--accent-cyan) 60%, transparent);
+  border: 2px solid var(--bg-panel);
+  transition: transform 0.15s ease;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  transform: scale(1.18);
+}
+
+.presetBar {
+  display: flex;
+  gap: 6px;
+}
+
+.presetBtn {
+  flex: 1;
+  padding: 5px 6px;
+  font-size: 10px;
+  font-weight: 600;
+  font-family: var(--font-data);
+  background: var(--bg-panel);
+  color: var(--text-canopy);
+  border: 1px solid var(--line-rivet);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.presetBtn:hover {
+  background: color-mix(in srgb, var(--accent-cyan) 14%, var(--bg-panel));
+  color: var(--accent-cyan);
+  border-color: var(--accent-cyan);
+}
+
+.btnGroup {
+  display: flex;
+  gap: 8px;
+}
+
+.armBtn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: color-mix(in srgb, var(--status-nominal) 15%, var(--bg-panel));
+  color: var(--status-nominal);
+  border: 1px solid color-mix(in srgb, var(--status-nominal) 40%, transparent);
+  border-radius: 4px;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.armBtn:hover {
+  background: color-mix(in srgb, var(--status-nominal) 25%, var(--bg-panel));
+  box-shadow: 0 0 12px color-mix(in srgb, var(--status-nominal) 30%, transparent);
+}
+
+.disarmBtn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: color-mix(in srgb, var(--status-caution) 15%, var(--bg-panel));
+  color: var(--status-caution);
+  border: 1px solid color-mix(in srgb, var(--status-caution) 40%, transparent);
+  border-radius: 4px;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.disarmBtn:hover {
+  background: color-mix(in srgb, var(--status-caution) 25%, var(--bg-panel));
+  box-shadow: 0 0 12px color-mix(in srgb, var(--status-caution) 30%, transparent);
+}
+
+.eStopBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: linear-gradient(135deg, #DC2626 0%, #B91C1C 100%);
+  color: #FFFFFF;
+  border: 1px solid #EF4444;
+  border-radius: 4px;
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 0 14px rgba(220, 38, 38, 0.4);
+  transition: all 0.2s ease;
+}
+
+.eStopBtn:hover {
+  background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.6);
+  transform: translateY(-1px);
+}
+
+/* ── Hardware Strip (Valve & Potentiometers) ── */
+.hardwareGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.hwCard {
+  background: var(--bg-panel-raised);
+  border: 1px solid var(--line-rivet);
+  border-radius: 6px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hwHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hwTitle {
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-instrument);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.valveState {
+  font-family: var(--font-data);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.valveOpen {
+  background: color-mix(in srgb, var(--status-nominal) 15%, transparent);
+  color: var(--status-nominal);
+  border: 1px solid color-mix(in srgb, var(--status-nominal) 40%, transparent);
+}
+
+.valveClosed {
+  background: color-mix(in srgb, var(--text-instrument) 15%, transparent);
+  color: var(--text-instrument);
+  border: 1px solid var(--line-rivet);
+}
+
+.valveActions {
+  display: flex;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.miniBtn {
+  flex: 1;
+  padding: 5px 6px;
+  font-family: var(--font-display);
+  font-size: 9.5px;
+  font-weight: 700;
+  background: var(--bg-panel);
+  color: var(--text-canopy);
+  border: 1px solid var(--line-rivet);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.miniBtn:hover {
+  background: color-mix(in srgb, var(--accent-cyan) 15%, var(--bg-panel));
+  color: var(--accent-cyan);
+  border-color: var(--accent-cyan);
+}
+
+.resValues {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.resItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.resLabel {
+  font-family: var(--font-ui);
+  font-size: 9px;
+  color: var(--text-instrument);
+  text-transform: uppercase;
+}
+
+.resVal {
+  font-family: var(--font-data);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-canopy);
+}
+
+/* ── ACS37800 Triple Sensor Strip ── */
+.acsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.acsCard {
+  background: var(--bg-panel-raised);
+  border: 1px solid var(--line-rivet);
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.acsTitle {
+  font-family: var(--font-display);
+  font-size: 9.5px;
+  font-weight: 700;
+  color: var(--accent-cyan);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.acsSub {
+  font-size: 8.5px;
+  color: var(--text-instrument);
+  font-family: var(--font-data);
+  margin-bottom: 2px;
+}
+
+.acsMetrics {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.acsMetricRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 10px;
+}
+
+.acsMetricKey {
+  font-family: var(--font-ui);
+  color: var(--text-instrument);
+}
+
+.acsMetricVal {
+  font-family: var(--font-data);
+  font-weight: 700;
+  color: var(--text-canopy);
+}
+
+.footerInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 9.5px;
+  color: var(--text-instrument);
+  font-family: var(--font-data);
+  padding-top: 6px;
+  border-top: 1px solid var(--line-rivet);
+}

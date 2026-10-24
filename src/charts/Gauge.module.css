@@ -1,0 +1,60 @@
+/* AEROTWIN — GAUGE */
+
+
+.gauge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+}
+
+
+.svg {
+  width: 100%;
+  max-width: 200px;
+}
+
+
+/* ── Scale labels (min/max) ────────────────────────────── */
+
+.scaleLabel {
+  font-family: var(--font-data);
+  font-size: 9px;
+
+  fill: var(--text-instrument);
+}
+
+
+/* ── Center value ──────────────────────────────────────── */
+
+.valueText {
+  font-family: var(--font-data);
+  font-size: 16px;
+  font-weight: 500;
+
+  fill: var(--text-canopy);
+}
+
+
+/* ── Footer ────────────────────────────────────────────── */
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+
+  margin-top: var(--space-2);
+}
+
+
+.label {
+  font-family: var(--font-display);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  color: var(--text-canopy);
+}

@@ -1,0 +1,66 @@
+/* AEROTWIN — CORNER BRACKETS */
+
+
+.wrap {
+  position: absolute;
+  inset: -1px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+
+/* ── Individual bracket ────────────────────────────────── */
+
+.corner {
+  position: absolute;
+
+  width: var(--corner-bracket-size);
+  height: var(--corner-bracket-size);
+
+  border-color: var(--line-rivet);
+  transition: border-color var(--transition-state);
+}
+
+.tl {
+  top: 0; left: 0;
+  border-top: var(--corner-bracket-width) solid;
+  border-left: var(--corner-bracket-width) solid;
+  border-radius: 3px 0 0 0;
+}
+
+.tr {
+  top: 0; right: 0;
+  border-top: var(--corner-bracket-width) solid;
+  border-right: var(--corner-bracket-width) solid;
+  border-radius: 0 3px 0 0;
+}
+
+.bl {
+  bottom: 0; left: 0;
+  border-bottom: var(--corner-bracket-width) solid;
+  border-left: var(--corner-bracket-width) solid;
+  border-radius: 0 0 0 3px;
+}
+
+.br {
+  bottom: 0; right: 0;
+  border-bottom: var(--corner-bracket-width) solid;
+  border-right: var(--corner-bracket-width) solid;
+  border-radius: 0 0 3px 0;
+}
+
+
+/* ── Alert state (red brackets) ────────────────────────── */
+
+.alert .corner {
+  border-color: var(--status-critical);
+}
+
+
+/* ── Reduced motion ────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .corner {
+    transition: none;
+  }
+}

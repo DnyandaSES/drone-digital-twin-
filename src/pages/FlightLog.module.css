@@ -1,0 +1,152 @@
+/* FlightLog.module.css */
+
+.container {
+  padding: var(--page-padding);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--line-rivet);
+}
+
+.titleGroup {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.subtitle {
+  font: var(--type-caption);
+  color: var(--text-instrument);
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.btn {
+  all: unset;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: var(--button-radius);
+  font: 500 12px/1 var(--font-display);
+  color: var(--text-canopy);
+  background: var(--bg-panel);
+  border: 1px solid var(--line-rivet);
+  transition: all var(--transition-fast);
+}
+
+.btn:hover {
+  background: var(--bg-panel-raised);
+  border-color: var(--accent-cyan);
+  color: var(--accent-cyan);
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--grid-gutter);
+}
+
+.statCard {
+  background: var(--bg-panel);
+  border: 1px solid var(--line-rivet);
+  border-radius: var(--panel-radius);
+  padding: var(--panel-padding);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.statLabel {
+  font: var(--type-caption);
+  color: var(--text-instrument);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.statValue {
+  font: var(--type-stat-large);
+  color: var(--text-canopy);
+}
+
+.mainGrid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--grid-gutter);
+}
+
+.panel {
+  background: var(--bg-panel);
+  border: 1px solid var(--line-rivet);
+  border-radius: var(--panel-radius);
+  padding: var(--panel-padding);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.panelTitle {
+  font: var(--type-panel-label);
+  color: var(--text-instrument);
+  letter-spacing: 0.08em;
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--line-rivet);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font: 400 12px/1.4 var(--font-data);
+}
+
+.table th {
+  text-align: left;
+  padding: 8px;
+  font: 600 11px/1 var(--font-display);
+  color: var(--text-instrument);
+  border-bottom: 1px solid var(--line-rivet);
+}
+
+.table td {
+  padding: 8px;
+  color: var(--text-canopy);
+  border-bottom: 1px solid var(--line-rivet);
+}
+
+.table tr:hover td {
+  background: var(--bg-panel-raised);
+}
+
+.tag {
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.tagInfo {
+  background: rgba(79, 216, 224, 0.15);
+  color: var(--accent-cyan);
+}
+
+.tagWarn {
+  background: rgba(245, 166, 35, 0.15);
+  color: var(--status-caution);
+}

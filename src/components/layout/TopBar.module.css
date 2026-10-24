@@ -1,0 +1,281 @@
+/* AEROTWIN TOP BAR */
+
+
+/* TOP BAR */
+
+.topbar {
+  height: var(--topbar-height);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 var(--space-4);
+
+  background: var(--bg-hangar);
+  border-bottom: var(--panel-border-width) solid var(--line-rivet);
+
+  flex-shrink: 0;
+  gap: var(--space-3);
+  min-width: 0;
+
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+
+/* LEFT SECTION */
+
+.left {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: var(--space-3);
+  overflow: hidden;
+}
+
+
+/* BRAND */
+
+.brand {
+  flex-shrink: 0;
+
+  color: var(--text-canopy);
+
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+
+/* PAGE TITLE */
+
+.pageTitle {
+  flex-shrink: 0;
+
+  padding-left: var(--space-3);
+
+  color: var(--text-instrument);
+
+  border-left: 1px solid var(--line-rivet);
+
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+
+/* CONNECTION STATUS */
+
+.connection {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: var(--space-2);
+
+  color: var(--text-instrument);
+  overflow: hidden;
+}
+
+
+/* CONNECTION ICON */
+
+.connection svg {
+  flex-shrink: 0;
+
+  color: var(--accent-cyan);
+}
+
+
+/* STATUS DOT */
+
+.statusDot {
+  width: 7px;
+  height: 7px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: var(--accent-cyan);
+
+  animation: connectionPulse var(--live-pulse-duration)
+    ease-in-out infinite;
+}
+
+
+/* CONNECTION TEXT */
+
+.connectionText {
+  overflow: hidden;
+
+  color: var(--text-instrument);
+
+  font-family: var(--font-data);
+  font-size: var(--text-sm);
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  font-variant-numeric: tabular-nums;
+}
+
+
+/* CONNECTION LOST */
+
+.connectionLost .connectionText {
+  color: var(--status-critical);
+}
+
+.connectionLost svg {
+  color: var(--status-critical);
+}
+
+.connectionLost .statusDot {
+  background: var(--status-critical);
+
+  animation: none;
+}
+
+
+.right {
+  display: flex;
+  align-items: center;
+
+  flex-shrink: 0;
+}
+
+/* THEME SELECTOR */
+
+.themeSelector {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+
+  padding: 2px;
+  background: var(--bg-panel-raised);
+  border: 1px solid var(--line-rivet);
+  border-radius: var(--button-radius);
+
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.themeBtn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  padding: 3px 8px;
+  height: 24px;
+
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 3px;
+
+  color: var(--text-instrument);
+  font-family: var(--font-data);
+  font-size: 11px;
+  font-weight: 500;
+
+  cursor: pointer;
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.themeBtn:hover {
+  color: var(--text-canopy);
+}
+
+.themeBtnActive {
+  background: var(--bg-panel);
+  color: var(--accent-amber);
+  border-color: var(--line-rivet);
+}
+
+.themeBtnActive:hover {
+  color: var(--accent-amber);
+}
+
+.themeLabel {
+  letter-spacing: 0.02em;
+}
+
+.divider {
+  width: 1px;
+  height: 16px;
+  background: var(--line-rivet);
+  margin: 0 var(--space-3);
+}
+
+.missionClock {
+  color: var(--text-instrument);
+
+  font-family: var(--font-data);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+
+  font-variant-numeric: tabular-nums;
+}
+
+
+/* LIVE CONNECTION PULSE */
+
+@keyframes connectionPulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+}
+
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  .statusDot {
+    animation: none;
+  }
+
+  .topbar {
+    transition: none;
+  }
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+  .pageTitle {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .themeLabel {
+    display: none;
+  }
+
+  .themeBtn {
+    padding: 3px 6px;
+  }
+}
+
+@media (max-width: 520px) {
+  .connectionText {
+    display: none;
+  }
+}

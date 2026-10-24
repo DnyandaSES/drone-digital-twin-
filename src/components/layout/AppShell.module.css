@@ -1,0 +1,57 @@
+/* AEROTWIN APP SHELL */
+
+
+/* SHELL */
+
+.shell {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+
+  background: var(--bg-hangar);
+  color: var(--text-canopy);
+
+  overflow: hidden;
+}
+
+
+/* MAIN */
+
+.main {
+  min-width: 0;
+  min-height: 0;
+
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+}
+
+
+/* PAGE CONTENT */
+
+.content {
+  min-width: 0;
+  min-height: 0;
+
+  flex: 1;
+
+  overflow: auto;
+
+  background: var(--bg-hangar);
+
+  transition:
+    background var(--transition-fast);
+}
+
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  .content {
+    transition: none;
+  }
+}

@@ -1,0 +1,32 @@
+/* AEROTWIN — SPARKLINE */
+
+
+.bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+
+  width: 100%;
+
+  min-height: 0;
+}
+
+
+.bar {
+  flex: 1;
+
+  min-width: 2px;
+
+  border-radius: 2px 2px 0 0;
+
+  transition: height 500ms ease;
+}
+
+
+/* ── Reduced motion ────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .bar {
+    transition: none;
+  }
+}

@@ -1,0 +1,219 @@
+/* Telemetry.module.css */
+
+.container {
+  padding: var(--page-padding);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--line-rivet);
+}
+
+.titleGroup {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.subtitle {
+  font: var(--type-caption);
+  color: var(--text-instrument);
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  padding: var(--panel-padding);
+  background: var(--bg-panel);
+  border: 1px solid var(--line-rivet);
+  border-radius: var(--panel-radius);
+}
+
+.toolbarTitle {
+  font: var(--type-panel-label);
+  color: var(--text-instrument);
+  letter-spacing: 0.08em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.recorderControls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.btn {
+  all: unset;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: var(--button-radius);
+  font: 500 11px/1 var(--font-display);
+  letter-spacing: 0.05em;
+  color: var(--text-canopy);
+  background: var(--bg-panel-raised);
+  border: 1px solid var(--line-rivet);
+  transition: all var(--transition-fast);
+}
+
+.btn:hover {
+  border-color: var(--accent-cyan);
+  color: var(--accent-cyan);
+}
+
+.btnRecord {
+  background: rgba(255, 90, 95, 0.15);
+  color: var(--status-critical);
+  border-color: rgba(255, 90, 95, 0.3);
+}
+
+.btnRecord:hover {
+  background: var(--status-critical);
+  color: #fff;
+}
+
+.btnRecordActive {
+  background: var(--status-critical);
+  color: #fff;
+  animation: pulseBg 1.5s ease-in-out infinite;
+}
+
+@keyframes pulseBg {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+
+
+.input {
+  background: var(--bg-panel-raised);
+  border: 1px solid var(--line-rivet);
+  border-radius: var(--button-radius);
+  color: var(--text-canopy);
+  padding: 5px 8px;
+  font: 400 12px/1 var(--font-data);
+  outline: none;
+  width: 60px;
+  text-align: center;
+}
+
+.tabs {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.tab {
+  all: unset;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: var(--button-radius);
+  font: 500 11px/1 var(--font-display);
+  letter-spacing: 0.05em;
+  color: var(--text-instrument);
+  background: var(--bg-panel);
+  border: 1px solid var(--line-rivet);
+  transition: all var(--transition-fast);
+}
+
+.tab:hover {
+  color: var(--text-canopy);
+  border-color: var(--accent-cyan);
+}
+
+.tabActive {
+  color: var(--bg-hangar);
+  background: var(--accent-cyan);
+  border-color: var(--accent-cyan);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: var(--grid-gutter);
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.statRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.statValue {
+  font: var(--type-stat-large);
+  color: var(--text-canopy);
+}
+
+.statUnit {
+  font: var(--type-stat-unit);
+  color: var(--text-instrument);
+  margin-left: 4px;
+}
+
+.subStats {
+  display: flex;
+  gap: var(--space-4);
+  font: var(--type-caption);
+  color: var(--text-instrument);
+}
+
+.chartWrap {
+  height: 120px;
+  width: 100%;
+}
+
+.rawSection {
+  background: var(--bg-panel);
+  border: 1px solid var(--line-rivet);
+  border-radius: var(--panel-radius);
+  padding: var(--panel-padding);
+}
+
+.rawHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-3);
+}
+
+.rawTitle {
+  font: var(--type-panel-label);
+  color: var(--text-instrument);
+  letter-spacing: 0.08em;
+}
+
+.jsonBox {
+  background: var(--bg-panel-raised);
+  border: 1px solid var(--line-rivet);
+  border-radius: var(--button-radius);
+  padding: var(--space-3);
+  font: 400 12px/1.4 var(--font-data);
+  color: var(--accent-cyan);
+  max-height: 200px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  word-break: break-all;
+}

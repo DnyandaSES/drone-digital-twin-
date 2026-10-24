@@ -1,0 +1,62 @@
+/* AEROTWIN — SIGNAL PANEL */
+
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+
+
+/* ── Value row ─────────────────────────────────────────── */
+
+.valueRow {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+}
+
+.rssiValue {
+  font-family: var(--font-data);
+  font-size: 22px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+
+  color: var(--text-canopy);
+}
+
+.rssiUnit {
+  font-family: var(--font-ui);
+  font-size: 12px;
+
+  color: var(--text-instrument);
+}
+
+.connLabel {
+  margin-left: auto;
+
+  font-family: var(--font-data);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+
+  color: var(--accent-cyan);
+}
+
+
+/* ── Bars ──────────────────────────────────────────────── */
+
+.barsWrap {
+  flex: 1;
+  min-height: 40px;
+  margin-top: var(--space-2);
+}
+
+
+/* ── Chips ─────────────────────────────────────────────── */
+
+.chips {
+  display: flex;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}

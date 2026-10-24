@@ -1,0 +1,130 @@
+/* AEROTWIN — SYSTEM STATUS STRIP */
+
+
+.strip {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  width: 100%;
+}
+
+
+/* ── Status row ────────────────────────────────────────── */
+
+.row {
+  display: grid;
+  grid-template-columns: minmax(120px, 1.2fr) minmax(180px, 3fr) auto;
+  align-items: center;
+  gap: var(--space-3);
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  .row {
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+  }
+}
+
+.rowLeft {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.icon {
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.itemLabel {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-canopy);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* ── Values ────────────────────────────────────────────── */
+
+.rowValues {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.valGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 45px;
+}
+
+.val {
+  font-family: var(--font-data);
+  font-size: 12px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-canopy);
+  white-space: nowrap;
+}
+
+.valLabel {
+  font-family: var(--font-data);
+  font-size: 8px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-instrument);
+}
+
+.rowRight {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+
+/* ── Summary row ───────────────────────────────────────── */
+
+.summaryRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--line-rivet);
+
+  flex-wrap: wrap;
+}
+
+.summaryItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.summaryIcon {
+  font-size: 12px;
+}
+
+.summaryLabel {
+  font-family: var(--font-data);
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  color: var(--text-instrument);
+}
+
+.summaryValue {
+  font-family: var(--font-data);
+  font-size: 12px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-canopy);
+}

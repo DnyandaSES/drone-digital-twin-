@@ -1,0 +1,293 @@
+/* AEROTWIN — GLOBAL STYLES */
+
+
+/* FONT IMPORTS */
+
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&family=Space+Grotesk:wght@500;600&display=swap");
+
+
+/* RESET */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  border: 0;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* BODY */
+
+body {
+  background: var(--bg-hangar);
+  color: var(--text-canopy);
+
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+
+  overflow: hidden;
+
+  transition:
+    background 250ms ease,
+    color 250ms ease;
+}
+
+
+/* ROOT APPLICATION */
+
+#root {
+  min-width: 0;
+  min-height: 0;
+  isolation: isolate;
+}
+
+
+/* TYPOGRAPHY */
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-ui {
+  font-family: var(--font-ui);
+}
+
+.font-data {
+  font-family: var(--font-data);
+  font-variant-numeric: tabular-nums;
+}
+
+.text-page-title {
+  font: var(--type-page-title);
+}
+
+.text-panel-label {
+  font: var(--type-panel-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.text-stat-large {
+  font: var(--type-stat-large);
+  font-variant-numeric: tabular-nums;
+}
+
+.text-stat-unit {
+  font: var(--type-stat-unit);
+}
+
+.text-body {
+  font: var(--type-body);
+}
+
+.text-caption {
+  font: var(--type-caption);
+}
+
+
+/* SELECTION */
+
+::selection {
+  background: var(--accent-amber);
+  color: var(--bg-hangar);
+}
+
+
+/* FOCUS */
+
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: var(--focus-width) solid var(--focus-color);
+  outline-offset: var(--focus-offset);
+}
+
+
+/* BUTTONS */
+
+button {
+  color: inherit;
+  background: transparent;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: var(--opacity-disabled);
+}
+
+
+/* FORM ELEMENTS */
+
+input,
+textarea,
+select {
+  color: var(--text-canopy);
+  background: var(--bg-panel);
+
+  border: 1px solid var(--line-rivet);
+  border-radius: var(--button-radius);
+
+  outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-instrument);
+}
+
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  border-color: var(--accent-amber);
+}
+
+
+/* SCROLLBAR */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-rivet) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--line-rivet);
+  border-radius: 2px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--text-instrument);
+}
+
+
+/* THEME TRANSITIONS */
+
+html {
+  background: var(--bg-hangar);
+}
+
+body,
+button,
+input,
+textarea,
+select {
+  transition:
+    background 250ms ease,
+    color 250ms ease,
+    border-color 250ms ease;
+}
+
+
+/* LIVE TELEMETRY */
+
+[data-live="true"] {
+  font-variant-numeric: tabular-nums;
+}
+
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+/* DESKTOP WINDOW CONSTRAINT */
+
+html,
+body {
+  min-width: 0;
+  min-height: 0;
+}
+
+
+/* FIELD MODE SELECTION */
+
+@media (prefers-color-scheme: light) {
+  ::selection {
+    background: var(--accent-amber);
+    color: var(--bg-hangar);
+  }
+}
+
+[data-theme="field"] ::selection {
+  background: var(--accent-amber);
+  color: var(--bg-hangar);
+}
